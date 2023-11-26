@@ -14,3 +14,45 @@
   padding: 0.5rem;
   border-radius: 8px;
 }
+
+.main-title {
+  display: block;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #fff;
+}
+
+/* Create New User Style */
+.form-create>input {
+  margin: .7rem 0;
+}
+
+/* User List Styles */
+
+.user {
+  width: 240px;
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  margin: 10px 5px;
+}
+
+.avatar-image {
+  height: 65px;
+  border-radius: 50%;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-container>strong {
+  font-size: 1.2rem;
+  line-height: normal;
+}
+
+.user-info-container>p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: normal;
+}
