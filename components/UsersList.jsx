@@ -11,22 +11,20 @@ function UsersList() {
 
   return (
     <section>
-      {usersList.map((user, index) => {
-        return (
-          <div key={index} className="user">
-            <img
-              src={user.url}
-              alt={`${user.userName} avatar`}
-              title={user.userName}
-              className="avatar-image"
-            />
-            <div className="user-info-container">
-              <strong>{user.name}</strong>
-              <p>{`@${user.userName}`}</p>
-            </div>
+      {usersList.map((user, index) => (
+        <div key={index} className="user">
+          <img
+            src={user.url}
+            alt={`${user.userName} avatar`}
+            title={user.userName}
+            className="avatar-image"
+          />
+          <div className="user-info-container">
+            <strong>{user.name}</strong>
+            <p>{`@${user.userName}`}</p>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </section>
   );
 }

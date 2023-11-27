@@ -1,12 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import { UsersContext } from "../context/UsersContext";
 import { UrlContext } from "../context/UrlContext";
+import PreviewIcon from "./PrevImageIcon";
 
 function CreateUser() {
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const { setUsersList } = useContext(UsersContext);
-  const { url, setUrl } = useContext(UrlContext);
+  const { url, setUrl, ProfileIconDefault } = useContext(UrlContext);
 
   const handleName = (event) => {
     const inputValue = event.target.value;
@@ -31,15 +32,13 @@ function CreateUser() {
     e.preventDefault();
     const newUser = {
       name,
-      userName,
-      url,
+      userName: userName ?? "unknown",
+      url: url || ProfileIconDefault,
     };
     setUsersList((prevState) => [...prevState, newUser]);
     setName("");
     setUserName("");
     setUrl("");
-
-    console.log("image:", url);
   };
 
   return (
@@ -49,7 +48,6 @@ function CreateUser() {
         <input
           type="text"
           placeholder="Name"
-          required
           onChange={handleName}
           value={name}
         />
@@ -62,11 +60,15 @@ function CreateUser() {
         />
         <input
           type="file"
-          name="image"
+          name="myfile"
           accept="image/png, image/jpeg"
           onChange={handleURL}
+          className="inputfile"
         />
-        <button>Create User</button>
+        <div className="footer-prev-create">
+          <PreviewIcon></PreviewIcon>
+          <button>Create User</button>
+        </div>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import CreateUser from "./components/CreateUser";
-import ShowAndFollow from "./components/ShowAndFollow";
+import ShowUsers from "./components/ShowUsers";
 import FindUser from "./components/FindUser";
 import { UsersProvider } from "./context/UsersContext";
 import { UrlProvider } from "./context/UrlContext";
@@ -12,7 +12,7 @@ function App() {
       <UsersProvider>
         <UrlProvider>
           <CreateUser />
-          <ShowAndFollow />
+          <ShowUsers />
           <FindUser />
         </UrlProvider>
       </UsersProvider>
